@@ -1,9 +1,12 @@
 import Product from '../models/product.model.js'
 import { ErrorHandler } from '../utils/errorHandler.js'
 import catchAsyncError from '../middlewares/catchAsyncError.js'
+import { APIFeatures } from '../utils/apiFeatures.js'
 
 export const getProducts = async (req,res) => {
-    const products = await Product.find()
+    const resPerPage = 2;
+    const apiFeatures = new APIFeatures(Product.find(), req.query).search().filter().paginate(resPerPage);
+    const products = await apiFeatures.query;
     res.status(200).send({
         message : 'Products fetched successfully',
         count:products.length,
