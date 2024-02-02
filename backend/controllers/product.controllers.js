@@ -3,7 +3,7 @@ import { ErrorHandler } from '../utils/errorHandler.js'
 import catchAsyncError from '../middlewares/catchAsyncError.js'
 import { APIFeatures } from '../utils/apiFeatures.js'
 
-export const getProducts = async (req,res) => {
+export const getProducts = catchAsyncError(async (req,res) => {
     const resPerPage = 2;
     const apiFeatures = new APIFeatures(Product.find(), req.query).search().filter().paginate(resPerPage);
     const products = await apiFeatures.query;
@@ -11,9 +11,11 @@ export const getProducts = async (req,res) => {
         message : 'Products fetched successfully',
         count:products.length,
         products })
-}
+});
 
 export const newProduct = catchAsyncError(async (req, res, next) => {
+
+    req.body.user = req.user.id;
     const newProduct = await Product.create(req.body)
     res.status(201).send({
         message:'Product created successfully', 
@@ -32,7 +34,7 @@ export const getSingleProduct = catchAsyncError(async (req,res,next) => {
     })
 });
 
-export const updateProduct = async (req,res,next) => {
+export const updateProduct = catchAsyncError(async (req,res,next) => {
     let product = await Product.findById(req.params.id)
     
     if(!product){
@@ -48,9 +50,9 @@ export const updateProduct = async (req,res,next) => {
         message:'Product Updated Successfully',
         product
     })
-}
+});
 
-export const deleteProduct = async (req,res,next) => {
+export const deleteProduct = catchAsyncError(async (req,res,next) => {
     const product = await Product.findById(req.params.id)
     
     if(!product){
@@ -64,4 +66,4 @@ export const deleteProduct = async (req,res,next) => {
     res.status(200).send({
         message:'Product deleted successfully'
     })
-}
+});
