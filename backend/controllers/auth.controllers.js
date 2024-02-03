@@ -105,3 +105,43 @@ export const resetPassword = catchAsyncError( async (req, res, next) => {
      sendToken(user, 201, res)
  
  })
+
+ export const getUserProfile = catchAsyncError(async (req, res, next) => {
+
+    const user = await User.findById(req.user.id)
+
+    res.status(200).send({
+        success: true,
+        user
+    })
+
+ })
+
+ export const changePassword = catchAsyncError(async (req, res, next) => {
+
+    const user = await User.findById(req.user.id).select('+password');
+
+    if(!await user.isValidPassword(req.body.currentPassword)){
+        return next(new ErrorHandler('Current password is incorrect', 401))
+    }
+
+    user.password = req.body.password;
+    await user.save();
+
+    res.status(200).send({
+        success: true
+    })
+ })
+
+ export const updateProfile = catchAsyncError(async(req, res, next) => {
+
+    const user = await User.findByIdAndUpdate(req.user.id, req.body,{
+        new: true,
+        runValidators:true
+    })
+
+    res.status(200).send({
+        success: true,
+        user
+    })
+ })    

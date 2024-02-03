@@ -1,4 +1,3 @@
-import { ErrorHandler } from "../utils/errorHandler.js";
 
 export const errorMiddleware = (err, req, res, next) => {
     err.statuscode = err.statuscode || 500;
@@ -17,13 +16,15 @@ export const errorMiddleware = (err, req, res, next) => {
         let error = new Error(message);
         
         if(err.name == 'ValidationError'){
-            message = Object.values(err.errors).map(values => values.message)
+            message = Object.values(err.errors).map(value => value.message)
             error = new Error(message)
+            err.statusCode = 400;
         }
         
         if(err.name == 'CastError'){
             message = `Resource not found: ${err.path}` ;
             error = new Error(message)
+            err.statusCode = 400;
         }
 
         if(err.code == 11000) {
@@ -43,7 +44,7 @@ export const errorMiddleware = (err, req, res, next) => {
             error = new Error(message)
             err.statusCode = 400
         }
-        
+
         res.status(err.statuscode).send({
             success: false,
             message: error.message || 'Internal Server Error'
