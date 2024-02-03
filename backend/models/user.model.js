@@ -3,6 +3,8 @@ import validator from "validator";
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import crypto from 'crypto'
+import { ErrorHandler } from "../utils/errorHandler.js";
+import { error } from "console";
 
 const userSchema = new mongoose.Schema({
     name : {
@@ -36,8 +38,11 @@ const userSchema = new mongoose.Schema({
     }
 })
 
-userSchema.pre('save', async function(){
-    this.password = await bcrypt.hash(this.password, 10);
+userSchema.pre('save', async function(next){
+    if(!this.isModified('password')){
+        next();
+    }
+    this.password = await bcrypt.hash(this.password, 10 );
 })
 
 userSchema.methods.getJwtToken = function(){

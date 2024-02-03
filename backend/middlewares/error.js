@@ -25,6 +25,25 @@ export const errorMiddleware = (err, req, res, next) => {
             message = `Resource not found: ${err.path}` ;
             error = new Error(message)
         }
+
+        if(err.code == 11000) {
+            let message = `Duplicate ${Object.keys(err.keyValue)} error`;
+            error = new Error(message)
+            err.statusCode = 400
+        }
+
+        if(err.name == 'JSONWebTokenError') {
+            let message = `JSON Web Token is invalid. Try again`;
+            error = new Error(message)
+            err.statusCode = 400
+        }
+
+        if(err.name == 'TokenExpiredError') {
+            let message = `JSON Web Token is expired. Try again`;
+            error = new Error(message)
+            err.statusCode = 400
+        }
+        
         res.status(err.statuscode).send({
             success: false,
             message: error.message || 'Internal Server Error'
