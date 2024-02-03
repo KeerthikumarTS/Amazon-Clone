@@ -15,8 +15,8 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: [true,'Product description is required.']
     },
-    rating:{
-        type: String,
+    ratings:{
+        type: Number,
         default: 0
     }, 
     images:[
@@ -63,10 +63,7 @@ const productSchema = new mongoose.Schema({
     },
     reviews: [
         {
-            name:{
-                type: String,
-                required: true
-            },
+            user: mongoose.Schema.Types.ObjectId,
             rating: {
                 type: String,
                 required: true
