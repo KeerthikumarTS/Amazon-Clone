@@ -4,9 +4,21 @@ import catchAsyncError from '../middlewares/catchAsyncError.js'
 import { APIFeatures } from '../utils/apiFeatures.js'
 
 export const getProducts = catchAsyncError(async (req,res) => {
-    const resPerPage = 2;
-    const apiFeatures = new APIFeatures(Product.find(), req.query).search().filter().paginate(resPerPage);
-    const products = await apiFeatures.query;
+    const resPerPage = 3;
+    let buildQuery = () => {
+        return new APIFeatures(Product.find(), req.query).search().filter()
+    }
+    
+    const filteredProductsCount = await buildQuery().query.countDocuments({})
+    const totalProductsCount = await Product.countDocuments({});
+    let productsCount = totalProductsCount;
+
+    if(filteredProductsCount !== totalProductsCount) {
+        productsCount = filteredProductsCount;
+    }
+    
+    const products = await buildQuery().paginate(resPerPage).query;
+
     res.status(200).send({
         message : 'Products fetched successfully',
         count:products.length,
@@ -23,7 +35,7 @@ export const newProduct = catchAsyncError(async (req, res, next) => {
 });
 
 export const getSingleProduct = catchAsyncError(async (req,res,next) => {
-    const product = await Product.findById(req.params.id)
+    const product = await Product.findById(req.params.id).populate('reviews.user','name email')
     
     if(!product){
         return next(new ErrorHandler('Product not found', 404));
