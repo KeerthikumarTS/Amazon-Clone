@@ -6,7 +6,19 @@ import { sendEmail } from "../utils/sendmail.js";
 import crypto from 'crypto'
 
 export const registerUser = catchAsyncError(async(req,res,next) => {
-    const {name, email, password, avatar} = req.body;
+    const {name, email, password,} = req.body;
+    
+    let avatar;
+    
+    let BASE_URL = process.env.BACKEND_URL;
+    if(process.env.NODE_ENV === "production"){
+        BASE_URL = `${req.protocol}://${req.get('host')}`
+    }
+
+    if(req.file){
+        avatar = `${BASE_URL}/uploads/user/${req.file.originalname}`
+    }
+
     const user = await User.create({
         name,
         email,
@@ -55,7 +67,7 @@ export const forgotPassword = catchAsyncError(async(req, res, next) => {
     const resetToken = user.getResetToken();
     await user.save({validateBeforeSave: false})
 
-    const resetUrl = `${req.protocol}//${req.get('host')}/api/v1/password/reset/${resetToken}`
+    const resetUrl = `${process.env.FRONTEND_URL}/api/v1/password/reset/${resetToken}`
 
     const message = `Your password reset url is as follows \n\n 
     ${resetUrl} \n\n If you have not requested this email, then ignore it.`;
@@ -138,6 +150,17 @@ export const updateProfile = catchAsyncError(async(req, res, next) => {
     let newUserData = {
         name: req.body.name,
         email: req.body.email
+    }
+
+    let avatar;
+    let BASE_URL = process.env.BACKEND_URL;
+    if(process.env.NODE_ENV === "production"){
+        BASE_URL = `${req.protocol}://${req.get('host')}`
+    }
+
+    if(req.file){
+        avatar = `${BASE_URL}/uploads/user/${req.file.originalname}`
+        newUserData = {...newUserData,avatar }
     }
 
     const user = await User.findByIdAndUpdate(req.user.id, newUserData,{
