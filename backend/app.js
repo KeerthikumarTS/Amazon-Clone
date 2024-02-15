@@ -29,7 +29,7 @@ app.use('/api/v1', paymentRoutes)
 if(process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, '../frontend/build')));
     app.get('*', (res, req) =>{
-        res.sendfile(path.resolve(__dirname, '../frontend/build/index.html'))
+        res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'))
     })
 }
 
