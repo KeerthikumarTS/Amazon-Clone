@@ -1,6 +1,7 @@
 import catchAsyncError from "../middlewares/catchAsyncError.js";
 import Order from "../models/order.model.js";
 import Product from "../models/product.model.js";
+import { ErrorHandler } from "../utils/errorHandler.js";
 
 export const newOrder =  catchAsyncError( async (req, res, next) => {
     const {

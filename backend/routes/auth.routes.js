@@ -38,7 +38,7 @@ router.post('/login', loginUser)
 router.get('/logout', logoutUser)
 router.post('/password/forgot', forgotPassword)
 router.post('/password/reset/:token', resetPassword)
-router.get('/myProfile', isAuthenticatedUser, getUserProfile)
+router.get('/myprofile', isAuthenticatedUser, getUserProfile)
 router.put('/password/change', isAuthenticatedUser, changePassword)
 router.put('/update', isAuthenticatedUser,upload.single('avatar'), updateProfile)
 

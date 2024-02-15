@@ -4,7 +4,8 @@ import catchAsyncError from '../middlewares/catchAsyncError.js'
 import { APIFeatures } from '../utils/apiFeatures.js'
 
 export const getProducts = catchAsyncError(async (req,res) => {
-    const resPerPage = 3;
+    const resPerPage = 4;
+    
     let buildQuery = () => {
         return new APIFeatures(Product.find(), req.query).search().filter()
     }
@@ -20,12 +21,29 @@ export const getProducts = catchAsyncError(async (req,res) => {
     const products = await buildQuery().paginate(resPerPage).query;
 
     res.status(200).send({
-        message : 'Products fetched successfully',
-        count:products.length,
-        products })
+        success : true,
+        count: productsCount,
+        resPerPage,
+        products
+    })
 });
 
 export const newProduct = catchAsyncError(async (req, res, next) => {
+
+   let images = []
+    let BASE_URL = process.env.BACKEND_URL;
+    if(process.env.NODE_ENV === "production"){
+        BASE_URL = `${req.protocol}://${req.get('host')}`
+    }
+    
+    if(req.files.length > 0) {
+        req.files.forEach( file => {
+            let url = `${BASE_URL}/uploads/product/${file.originalname}`;
+            images.push({ image: url })
+        })
+    }
+
+    req.body.images = images;
 
     req.body.user = req.user.id;
     const newProduct = await Product.create(req.body)
@@ -48,6 +66,26 @@ export const getSingleProduct = catchAsyncError(async (req,res,next) => {
 
 export const updateProduct = catchAsyncError(async (req,res,next) => {
     let product = await Product.findById(req.params.id)
+
+    let images = []
+
+    if(req.body.imagesCleared === 'false' ) {
+        images = product.images;
+    }
+    let BASE_URL = process.env.BACKEND_URL;
+    if(process.env.NODE_ENV === "production"){
+        BASE_URL = `${req.protocol}://${req.get('host')}`
+    }
+
+    if(req.files.length > 0) {
+        req.files.forEach( file => {
+            let url = `${BASE_URL}/uploads/product/${file.originalname}`;
+            images.push({ image: url })
+        })
+    }
+
+
+    req.body.images = images;
     
     if(!product){
        return res.status(404).send({
@@ -112,22 +150,22 @@ export const createReview = catchAsyncError(async (req, res, next) =>{
     }
     //find the average of the product reviews
     product.ratings = product.reviews.reduce((acc, review) => {
-        return review.rating + acc;
-    }, 0) / product.reviews.length;
+        return review.rating + acc
+    }, 0)/product.reviews.length;
     product.ratings = isNaN(product.ratings)?0:product.ratings;
 
     await product.save({validateBeforeSave: false});
 
-    res.status(200).json({
+    res.status(200).send({
         success: true
     })
 
 
 })
 
-export const getReview = catchAsyncError(async (req, res ,next) => {
+export const getReviews = catchAsyncError(async (req, res ,next) => {
 
-    const product = await Product.findById(req.query.id);
+    const product = await Product.findById(req.query.id).populate('reviews.user','name email')
 
 
     res.status(200).send({
@@ -164,4 +202,12 @@ export const deleteReview = catchAsyncError(async (req, res, next) =>{
     })
 
 
+});
+
+export const getAdminProducts = catchAsyncError(async (req, res, next) =>{
+    const products = await Product.find();
+    res.status(200).send({
+        success: true,
+        products
+    })
 });

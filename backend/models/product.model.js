@@ -1,37 +1,38 @@
 import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema({
-    name:{
+    name : {
         type: String,
-        required: [true,'Please enter product name.'],
+        required: [true, "Please enter product name"],
         trim: true,
-        maxLength: [100, 'Product name should not exceed 100 characters.']
+        maxLength: [100, "Product name cannot exceed 100 characters"]
     },
-    price:{
+    price: {
         type: Number,
+        required: true,
         default: 0.0
     },
-    description:{
+    description: {
         type: String,
-        required: [true,'Product description is required.']
+        required: [true, "Please enter product description"]
     },
-    ratings:{
-        type: Number,
+    ratings: {
+        type: String,
         default: 0
-    }, 
-    images:[
+    },
+    images: [
         {
-            image:{
+            image: {
                 type: String,
                 required: true
             }
         }
     ],
-    category:{
-        type:String,
-        required:[true,'Please enter product category.'],
+    category: {
+        type: String,
+        required: [true, "Please enter product category"],
         enum: {
-            values:[
+            values: [
                 'Electronics',
                 'Mobile Phones',
                 'Laptops',
@@ -45,7 +46,7 @@ const productSchema = new mongoose.Schema({
                 'Outdoor',
                 'Home'
             ],
-            message: 'Please select correct category.'
+            message : "Please select correct category"
         }
     },
     seller: {
@@ -63,9 +64,12 @@ const productSchema = new mongoose.Schema({
     },
     reviews: [
         {
-            user: mongoose.Schema.Types.ObjectId,
+            user:{
+                type:mongoose.Schema.Types.ObjectId,
+                ref: 'User'
+            },
             rating: {
-                type: String,
+                type: Number,
                 required: true
             },
             comment: {
@@ -76,10 +80,11 @@ const productSchema = new mongoose.Schema({
     ],
     user: {
         type : mongoose.Schema.Types.ObjectId
-    },
+    }
+    ,
     createdAt:{
         type: Date,
-        default: Date.now
+        default: Date.now()
     }
 })
 

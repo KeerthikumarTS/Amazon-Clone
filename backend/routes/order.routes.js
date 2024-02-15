@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post('/order/new', isAuthenticatedUser, newOrder);
 router.get('/order/:id', isAuthenticatedUser, getSingleOrder);
-router.get('/myOrders', isAuthenticatedUser, myOrders);
+router.get('/myorders', isAuthenticatedUser, myOrders);
 
 //Admin-routes:
 router.get('/admin/orders', isAuthenticatedUser, authorizeRoles('admin'), totalOrders);

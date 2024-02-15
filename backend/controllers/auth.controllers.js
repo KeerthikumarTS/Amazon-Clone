@@ -58,16 +58,21 @@ export const logoutUser = catchAsyncError(async(req, res, next) => {
 
 export const forgotPassword = catchAsyncError(async(req, res, next) => {
      
-    const user = await User.findOne({email: req.body.email})
+    const user =  await User.findOne({email: req.body.email});
 
-    if(!user){
-        return next(new ErrorHandler("User not found with this email", 404))
+    if(!user) {
+        return next(new ErrorHandler('User not found with this email', 404))
     }
 
     const resetToken = user.getResetToken();
     await user.save({validateBeforeSave: false})
+    
+    let BASE_URL = process.env.FRONTEND_URL;
+    if(process.env.NODE_ENV === "production"){
+        BASE_URL = `${req.protocol}://${req.get('host')}`
+    }
 
-    const resetUrl = `${process.env.FRONTEND_URL}/api/v1/password/reset/${resetToken}`
+    const resetUrl = `${BASE_URL}/password/reset/${resetToken}`;
 
     const message = `Your password reset url is as follows \n\n 
     ${resetUrl} \n\n If you have not requested this email, then ignore it.`;
@@ -75,11 +80,11 @@ export const forgotPassword = catchAsyncError(async(req, res, next) => {
     try{
         sendEmail({
             email: user.email,
-            subject: "Indsol Password Recovery",
+            subject: "JVLcart Password Recovery",
             message
         })
 
-        res.status(200).send({
+        res.status(200).json({
             success: true,
             message: `Email sent to ${user.email}`
         })
@@ -132,16 +137,16 @@ export const getUserProfile = catchAsyncError(async (req, res, next) => {
 export const changePassword = catchAsyncError(async (req, res, next) => {
 
     const user = await User.findById(req.user.id).select('+password');
-
-    if(!await user.isValidPassword(req.body.currentPassword)){
-        return next(new ErrorHandler('Current password is incorrect', 401))
+    //check old password
+    if(!await user.isValidPassword(req.body.oldPassword)) {
+        return next(new ErrorHandler('Old password is incorrect', 401));
     }
 
+    //assigning new password
     user.password = req.body.password;
     await user.save();
-
-    res.status(200).send({
-        success: true
+    res.status(200).json({
+        success:true,
     })
  })
 

@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: 'Amazon Ember';
+  font-family: 'Lato', sans-serif;
   width: 100%;
   height: 100%;
   margin: 0px;
@@ -8,7 +8,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Scroll Bar */
 
 ::-webkit-scrollbar-track {
   background-color: #f5f5f5;
@@ -27,12 +26,12 @@ body {
 }
 
 nav {
-  background-color: #232f3e;
+  background-color: #00459A;
   padding: 1rem 1rem;
 }
 
 #search_btn {
-  background-color: #febd69;
+  background-color: #e6e6f2;
 }
 
 .input-group {
@@ -47,7 +46,7 @@ nav {
 
 #login_btn,
 #view_btn {
-  background-color: #febd69;
+  background-color: #e6e6f2;
   padding: 0.4rem 1.8rem;
   font-family: calibri;
 }
@@ -66,7 +65,6 @@ nav {
   font-size: 0.9rem;
 }
 
-/* Home page */
 #products_heading {
   margin-top: 1.8rem;
 }
@@ -113,7 +111,6 @@ nav {
   margin-left: 0.5rem;
 }
 
-/* Footer */
 footer {
   margin-top: 8rem;
   color: grey;
@@ -121,7 +118,6 @@ footer {
   width: 100%;
 }
 
-/* Ratings */
 
 .rating-outer {
   display: inline-block;
@@ -148,7 +144,6 @@ footer {
   color: #f8ce0b;
 }
 
-/* Product Details Page */
 #product_id {
   color: grey;
   font-size: 0.8rem;
@@ -190,7 +185,6 @@ footer {
   margin-top: 9rem;
 }
 
-/* Loader */
 .loader {
   display: block;
   margin-left: auto;
@@ -207,8 +201,8 @@ footer {
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #fa9c23;
-  border-color: #fa9c23 transparent;
+  border: 6px solid #00459A;
+  border-color: #00459A transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
@@ -220,7 +214,6 @@ footer {
   }
 }
 
-/* Cart */
 
 .cart-item {
   margin: 1.8rem 0rem;
@@ -291,7 +284,6 @@ footer {
   background-color: white;
 }
 
-/* Login & Register */
 
 .wrapper {
   display: flex;
@@ -318,7 +310,6 @@ footer {
   color: grey;
 }
 
-/* Avatar */
 .avatar {
   display: inline-block;
   margin-bottom: 0;
@@ -345,7 +336,6 @@ footer {
   box-shadow: none;
 }
 
-/* Header User Profile */
 
 .avatar-nav {
   margin-right: 0.6rem;
@@ -353,7 +343,6 @@ footer {
   width: 2.2rem;
 }
 
-/* Checkout Steps */
 
 .checkout-progress div {
   box-sizing: border-box;
@@ -427,7 +416,6 @@ footer {
   margin-right: -1px;
 }
 
-/* User Profile */
 
 .avatar-profile {
   height: 16rem;
@@ -449,8 +437,6 @@ footer {
   border-color: #fa9c23;
 }
 
-/* Confirm Order */
-
 .order-confirm p,
 .order-details p {
   margin-left: 1.5rem;
@@ -466,7 +452,7 @@ footer {
   color: white;
 }
 
-/* Pagination */
+
 .page-item.active .page-link {
   background-color: #fa9c23;
   border-color: #fa9c23;
@@ -480,7 +466,6 @@ footer {
   color: #fa9c23;
 }
 
-/* Admin Sidebar */
 
 .sidebar-wrapper {
   display: flex;
@@ -570,19 +555,17 @@ ul.CTAs a {
   margin-bottom: 5px;
 }
 
-/* Products List Admin */
+
 #products_table .btn {
   padding: 0.2rem 0.5rem;
   margin-left: 0.4rem;
 }
 
-/* Dashboard */
 
 .card-font-size {
   font-size: 1.5rem;
 }
 
-/* Reviews */
 
 .rating {
   margin-top: 10rem;
@@ -619,3 +602,47 @@ ul.CTAs a {
   font-size: 0.8rem;
   color: grey;
 }
+
+.img-pre-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    margin: 10px auto; 
+  }
+
+.img-pre-item{
+  position: relative;
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.img-pre-item img {
+  width: 55px;
+  height: 52px;
+  object-fit: cover;
+}
+
+.img-pre-dlt-btn{
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  top: -5px;
+  right: -3px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #ff0000;
+  background-color: #ddd;
+  font-size: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+  .prd-dtl-img{
+    display: block;
+    width: 100%;
+    max-width: 416px;
+    max-height: 416px;
+    object-fit: contain;
+  }
