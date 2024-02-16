@@ -7,22 +7,22 @@ const products = [
     "ratings": "0",
     "images": [
       {
-        "image": "http://localhost:8000/uploads/product/-original-imagz42t6kzzjrcx.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/-original-imagz42t6kzzjrcx.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/-original-imagnychbgagc4by.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/-original-imagnychbgagc4by.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/-original-imagnychpppb6cef.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/-original-imagnychpppb6cef.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/-original-imagnycha5uegjfe.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/-original-imagnycha5uegjfe.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/-original-imagnychgqk9nrhk.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/-original-imagnychgqk9nrhk.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/-original-imagnychzferym42.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/-original-imagnychzferym42.webp"
       }
     ],
     "category": "Laptops",
@@ -38,25 +38,25 @@ const products = [
     "ratings": "0",
     "images": [
       {
-        "image": "http://localhost:8000/uploads/product/g34-5g-pb1v0002in-motorola-original-imagwu4rayqhgfjh.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/g34-5g-pb1v0002in-motorola-original-imagwu4rayqhgfjh.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/g34-5g-pb1v0002in-motorola-original-imagwu4r9mhchvgx.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/g34-5g-pb1v0002in-motorola-original-imagwu4r9mhchvgx.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/g34-5g-pb1v0002in-motorola-original-imagwu4ryqncjmmw.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/g34-5g-pb1v0002in-motorola-original-imagwu4ryqncjmmw.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/g34-5g-pb1v0002in-motorola-original-imagwu4rcfp82xzn.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/g34-5g-pb1v0002in-motorola-original-imagwu4rcfp82xzn.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/g34-5g-pb1v0002in-motorola-original-imagwu4r2smm7zd3.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/g34-5g-pb1v0002in-motorola-original-imagwu4r2smm7zd3.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/g34-5g-pb1v0001in-motorola-original-imagwu4rmpxv4aue.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/g34-5g-pb1v0001in-motorola-original-imagwu4rmpxv4aue.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/g34-5g-pb1v0001in-motorola-original-imagwu4rjeupzzwu.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/g34-5g-pb1v0001in-motorola-original-imagwu4rjeupzzwu.webp"
       }
     ],
     "category": "Mobile Phones",
@@ -72,19 +72,19 @@ const products = [
     "ratings": "0",
     "images": [
       {
-        "image": "http://localhost:8000/uploads/product/200d-ii-200d-ii-canon-original-imaffvrhzyqzayys.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/200d-ii-200d-ii-canon-original-imaffvrhzyqzayys.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/200d-ii-200d-ii-canon-original-imaffvh6yrfjq4nh.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/200d-ii-200d-ii-canon-original-imaffvh6yrfjq4nh.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/200d-mkii-eos-200d-mkii-canon-original-imaffvh7txfduxxh.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/200d-mkii-eos-200d-mkii-canon-original-imaffvh7txfduxxh.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/200d-mkii-eos-200d-mkii-canon-original-imaffvqfkvxdwf4t.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/200d-mkii-eos-200d-mkii-canon-original-imaffvqfkvxdwf4t.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/200d-mkii-eos-200d-mkii-canon-original-imaffvn3zma2h7ey.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/200d-mkii-eos-200d-mkii-canon-original-imaffvn3zma2h7ey.webp"
       }
     ],
     "category": "Electronics",
@@ -100,16 +100,16 @@ const products = [
     "ratings": "0",
     "images": [
       {
-        "image": "http://localhost:8000/uploads/product/buds-3-e509a-oneplus-original-imagwynyejujguzj.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/buds-3-e509a-oneplus-original-imagwynyejujguzj.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/buds-3-e509a-oneplus-original-imagwynydtkkwgxg.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/buds-3-e509a-oneplus-original-imagwynydtkkwgxg.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/buds-3-e509a-oneplus-original-imagwynyxjpdrcf8.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/buds-3-e509a-oneplus-original-imagwynyxjpdrcf8.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/-original-imagxz9hrx7ynznz.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/-original-imagxz9hrx7ynznz.webp"
       }
     ],
     "category": "Headphones",
@@ -125,19 +125,19 @@ const products = [
     "ratings": "0",
     "images": [
       {
-        "image": "http://localhost:8000/uploads/product/5g-700-8-campus-wht-original-imafn73zu9wbsknf.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/5g-700-8-campus-wht-original-imafn73zu9wbsknf.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/5g-700-7-campus-wht-original-imafn73zhhmanyzd.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/5g-700-7-campus-wht-original-imafn73zhhmanyzd.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/5g-700-9-campus-wht-original-imafn73zyywb8fpq.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/5g-700-9-campus-wht-original-imafn73zyywb8fpq.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/5g-700-10-campus-wht-original-imafn73zd5rgwwap.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/5g-700-10-campus-wht-original-imafn73zd5rgwwap.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/5g-700-10-campus-wht-original-imafn73zb3h4nhqh.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/5g-700-10-campus-wht-original-imafn73zb3h4nhqh.webp"
       }
     ],
     "category": "Clothes/Shoes",
@@ -153,19 +153,19 @@ const products = [
     "ratings": "0",
     "images": [
       {
-        "image": "http://localhost:8000/uploads/product/4-1-40-40-1-7-adw-400mm-black-goldg-adwait-original-imagubjgnyyfjmfy.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/4-1-40-40-1-7-adw-400mm-black-goldg-adwait-original-imagubjgnyyfjmfy.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/-original-imaguwbnhn9gtbxz.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/-original-imaguwbnhn9gtbxz.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/4-1-40-40-1-7-adw-400mm-black-goldg-adwait-original-imagubjgfhjzxr86.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/4-1-40-40-1-7-adw-400mm-black-goldg-adwait-original-imagubjgfhjzxr86.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/4-1-40-40-1-7-adw-400mm-black-goldg-adwait-original-imagubjgv3xjhxn6.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/4-1-40-40-1-7-adw-400mm-black-goldg-adwait-original-imagubjgv3xjhxn6.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/4-1-40-40-1-7-adw-400mm-black-goldg-adwait-original-imagubjg6dkp4r47.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/4-1-40-40-1-7-adw-400mm-black-goldg-adwait-original-imagubjg6dkp4r47.webp"
       }
     ],
     "category": "Home",
@@ -181,16 +181,16 @@ const products = [
     "ratings": "0",
     "images": [
       {
-        "image": "http://localhost:8000/uploads/product/-original-imagwytuybmuzb8x.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/-original-imagwytuybmuzb8x.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/-original-imagwtz68v28zcey.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/-original-imagwtz68v28zcey.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/-original-imagwtz6aagvnjq8.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/-original-imagwtz6aagvnjq8.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/-original-imagwtz6arrkkpts.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/-original-imagwtz6arrkkpts.webp"
       }
     ],
     "category": "Accessories",
@@ -206,19 +206,19 @@ const products = [
     "ratings": "0",
     "images": [
       {
-        "image": "http://localhost:8000/uploads/product/4xl-cushionbeanbag-01-giglick-original-imagrabwzv9yznqg.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/4xl-cushionbeanbag-01-giglick-original-imagrabwzv9yznqg.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/4xl-cushionbeanbag-01-giglick-original-imagrabwkmbwjcgg.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/4xl-cushionbeanbag-01-giglick-original-imagrabwkmbwjcgg.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/4xl-cushionbeanbag-01-giglick-original-imagrabwezemavgn.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/4xl-cushionbeanbag-01-giglick-original-imagrabwezemavgn.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/4xl-cushionbeanbag-01-giglick-original-imagrabw7uxghxyk.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/4xl-cushionbeanbag-01-giglick-original-imagrabw7uxghxyk.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/4xl-cushionbeanbag-01-giglick-original-imagrabwf5sruxsh.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/4xl-cushionbeanbag-01-giglick-original-imagrabwf5sruxsh.webp"
       }
     ],
     "category": "Home",
@@ -234,13 +234,13 @@ const products = [
     "ratings": "0",
     "images": [
       {
-        "image": "http://localhost:8000/uploads/product/samsung-mu-pc2t0t-ww-original-imaftxkfzmpw4xpk.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/samsung-mu-pc2t0t-ww-original-imaftxkfzmpw4xpk.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/samsung-mu-pc2t0t-ww-original-imaftxkf2jr8zhyz.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/samsung-mu-pc2t0t-ww-original-imaftxkf2jr8zhyz.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/samsung-mu-pc1t0t-ww-original-imaftxkfcx9hbjbn.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/samsung-mu-pc1t0t-ww-original-imaftxkfcx9hbjbn.webp"
       }
     ],
     "category": "Accessories",
@@ -256,25 +256,25 @@ const products = [
     "ratings": "0",
     "images": [
       {
-        "image": "http://localhost:8000/uploads/product/-original-imagrngx2yfuchjm.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/-original-imagrngx2yfuchjm.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/ashper-unisex-backpack-with-usb-port-and-rain-cover-w-096-laptop-original-imagmmhf7fuqzuzw.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/ashper-unisex-backpack-with-usb-port-and-rain-cover-w-096-laptop-original-imagmmhf7fuqzuzw.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/12-ashper-unisex-backpack-with-usb-port-and-rain-cover-14-w-096-original-imagmwdgfzw35kpy.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/12-ashper-unisex-backpack-with-usb-port-and-rain-cover-14-w-096-original-imagmwdgfzw35kpy.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/12-ashper-unisex-backpack-with-usb-port-and-rain-cover-14-w-096-original-imagq8e9gvyqshhb.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/12-ashper-unisex-backpack-with-usb-port-and-rain-cover-14-w-096-original-imagq8e9gvyqshhb.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/12-ashper-unisex-backpack-with-usb-port-and-rain-cover-14-w-096-original-imagq8e9jzhg2gfv.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/12-ashper-unisex-backpack-with-usb-port-and-rain-cover-14-w-096-original-imagq8e9jzhg2gfv.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/12-ashper-unisex-backpack-with-usb-port-and-rain-cover-14-w-096-original-imagq8e9y2dh4bxz.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/12-ashper-unisex-backpack-with-usb-port-and-rain-cover-14-w-096-original-imagq8e9y2dh4bxz.webp"
       },
       {
-        "image": "http://localhost:8000/uploads/product/12-ashper-unisex-backpack-with-usb-port-and-rain-cover-14-w-096-original-imagmwdgnw5vugkk.webp"
+        "image": "http://13.60.25.29:8000/uploads/product/12-ashper-unisex-backpack-with-usb-port-and-rain-cover-14-w-096-original-imagmwdgnw5vugkk.webp"
       }
     ],
     "category": "Sports",
